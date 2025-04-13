@@ -48,7 +48,7 @@ jobs:
 
       - name: Bring up docker stack
         run: |
-          docker-compose up -d
+          docker compose up -d
 
       - name: Wait for containers to initialize
         run: |
@@ -83,5 +83,5 @@ jobs:
 
       - name: Bring down docker stack
         run: |
-          docker-compose down
+          docker compose down
         if: always()
