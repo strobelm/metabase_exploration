@@ -1,0 +1,23 @@
+services:
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    environment:
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_HOST: postgres-test
+      DB_PORT: 5432
+      DB_NAME: customer_support_test
+      CSV_PATH: /app/tests/data/test_data.csv.gz
+    depends_on:
+      - postgres-test
+
+  postgres-test:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: customer_support_test
+    ports:
+      - "5433:5432"
