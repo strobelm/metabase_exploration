@@ -146,7 +146,7 @@ Performs basic text analysis on ticket descriptions:
 ## Quick Start
 
 ```
-docker-compose up -d
+docker compose up -d
 ```
 
 Access Metabase: http://localhost:3000
